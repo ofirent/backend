@@ -6,6 +6,9 @@ const pool = new Pool({
   password: process.env.PGPASSWORD,
   database: process.env.PGDATABASE,
   port: process.env.PGPORT,
+  ssl: {
+    rejectUnauthorized: false, // מאפשר חיבור עם SSL גם אם לא מאמתים את השרת
+  },
 });
 
 pool.connect()
